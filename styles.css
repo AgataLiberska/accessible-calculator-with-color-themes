@@ -1,5 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
-@import 'themes.css';
+
+
+.dark-theme {
+
+    --bg-color: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --display-bg: hsl(224, 36%, 15%);
+    --display-text: hsl(0, 100%, 100%);
+
+    --function-key-bg: hsl(225, 21%, 49%);
+    --function-key-shadow: hsl(224, 28%, 35%);
+    --function-key-text: hsl(0, 100%, 100%);
+    --function-key-hover: hsl(224, 51%, 76%);
+
+    --equals-key-bg: hsl(6, 63%, 50%); 
+    --equals-key-hover: hsla(6, 93%, 67%, 1);
+    --equals-key-shadow: hsl(6, 70%, 34%);
+    --equals-key-text: hsl(0, 100%, 100%);
+    
+    --number-key-bg: hsl(30, 25%, 89%);
+    --number-key-hover: hsl(31, 100%, 100%);
+    --number-key-shadow: hsl(28, 16%, 65%);
+    --number-key-text: hsl(221, 14%, 31%);
+
+    --focus-color: hsl(223, 31%, 20%);
+}
+
+.light-theme {
+    --bg-color:  hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --display-bg: hsl(0, 0%, 93%);
+    --display-text: hsl(60, 10%, 19%);
+
+    --function-key-bg: hsl(185, 42%, 37%);
+    --function-key-hover: hsla(184, 40%, 56%, 1);
+    --function-key-shadow: hsl(185, 58%, 25%);
+    --function-key-text: hsl(0, 100%, 100%);
+
+    --equals-key-bg: hsl(25, 98%, 40%);  
+    --equals-key-hover:               hsla(25, 100%, 61%, 1);
+    --equals-key-shadow: hsl(25, 99%, 27%);
+    --equals-key-text: hsl(0, 100%, 100%);
+
+    --number-key-bg: hsl(45, 7%, 89%);
+    --number-key-hover: hsla(0, 0%, 100%, 1);
+    --number-key-shadow: hsl(35, 11%, 61%);
+    --number-key-text: hsl(60, 10%, 19%); 
+
+    --focus-color: hsl(0, 5%, 81%);
+}
+
+.neon-theme {
+    --bg-color:  hsl(268, 75%, 9%);
+    --keypad-bg: hsl(268, 71%, 12%);
+    --display-bg: hsl(268, 71%, 12%);
+    --display-text: hsl(52, 100%, 62%);
+
+    --function-key-bg: hsl(281, 89%, 26%);
+    --function-key-hover: hsla(280, 56%, 44%, 1);
+    --function-key-shadow: hsl(285, 91%, 52%);
+    --function-key-text: hsl(0, 100%, 100%);
+
+    --equals-key-bg: hsl(176, 100%, 44%);  
+    --equals-key-hover: hsla(176, 100%, 79%, 1);
+    --equals-key-shadow: hsl(177, 92%, 70%);
+    --equals-key-text: hsl(198, 20%, 13%);
+
+    --number-key-bg: hsl(268, 47%, 21%);
+    --number-key-hover: hsla(268, 54%, 44%, 1);
+    --number-key-shadow: hsl(290, 70%, 36%);
+    --number-key-text: hsl(52, 100%, 62%); 
+
+    --focus-color: hsl(290, 70%, 36%);
+}
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -15,6 +88,7 @@ body {
     min-height: 100vh;
     background-color: var(--bg-color);
     font-family: 'Spartan', sans-serif;
+    transition: background-color 200ms ease-in-out;
 }
 
 main {
@@ -31,13 +105,112 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    height: 2.75rem;
     margin-bottom: 2rem;
 }
 
 .calc__heading {
     font-size: 2rem;
+    line-height: 2rem;
     color: var(--display-text);
 }
+
+/* Accessible toggle =====================================================*/
+.theme__switcher {
+    --thumb-padding: 0.3125rem;
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 4.5rem;
+    margin-right: 0.25rem;
+    border: 0;
+}
+
+.theme__switcher legend {
+    position: absolute;
+    right: 6rem;
+    bottom: 0.25rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--display-text);
+}
+
+.theme__switcher label {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.375rem 2rem;
+    color: var(--display-text);
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.theme__switcher label:first-of-type {
+    z-index: 1;
+}
+
+.theme__switcher input {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    appearance: none;
+    background: none;
+    opacity: 0.000001;
+}
+
+.theme__switcher input:focus + label  {
+    text-decoration: underline;
+}
+
+/* toggle background */
+.theme__switcher label:first-of-type::after {
+    content: '';
+    position: absolute;
+    left: -0.25rem;
+    bottom: 0;
+    display: block;
+    height: 1.625rem;
+    width: 5rem;
+    background-color: var(--keypad-bg);
+    border-radius: 0.875rem;
+}
+
+/* toggle background focus state */
+.theme__switcher:focus-within label:first-of-type::after {
+    box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px var(--focus-color);
+}
+
+/* toggle thumb */
+
+.theme__switcher label:last-of-type:before {
+    content: '';
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: var(--equals-key-bg);
+    bottom: var(--thumb-padding);
+    right: calc(var(--thumb-padding) - 0.25rem );
+    transition: transform 0.2s ease-in-out;
+    z-index: 3;
+}
+
+/* move it when other inputs are selected */
+.theme__switcher input:first-of-type:checked ~ label:last-of-type::before {
+    transform: translateX(-3.375rem);
+}
+
+.theme__switcher input:nth-of-type(2):checked ~ label:last-of-type::before {
+    transform: translateX(-1.75rem);
+}
+
+.theme__switcher input:last-of-type:checked ~ label:last-of-type::before {
+    transform: translateX(-0.01rem);
+}
+
+/* Eng of the accessible toggle ====================================== */ 
 
 .calc__display {
     margin-bottom: 1.5rem;
@@ -47,6 +220,7 @@ main {
     text-align: right;
     font-size: 2rem;
     color: var(--display-text);
+    transition: all 200ms ease-in-out;
 }
 
 .calc__keypad {
@@ -58,16 +232,17 @@ main {
     padding: 1.5rem;
     background-color: var(--keypad-bg);
     border-radius: 0.625rem;
+    transition: background-color 200ms ease-in-out;
 }
 
 .calc__btn {
     padding: 0.625rem 0 0.875rem; 
     border: 0;
     border-radius: 0.625rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
     line-height: 2.25rem;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out           ;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .btn-num {
@@ -85,6 +260,8 @@ main {
     color: var(--function-key-text);
     box-shadow: inset 0 -0.25rem 0 var(--function-key-shadow);
     color: var(--function-key-text);
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
 .btn-func:hover {
@@ -100,6 +277,7 @@ main {
     background-color: var(--equals-key-bg);
     color: var(--equals-key-text);
     box-shadow: inset 0 -0.25rem 0 var(--equals-key-shadow);
+    font-size: 1rem;
 }
 
 .btn-equals:hover {
@@ -116,5 +294,13 @@ main {
     .calc__keypad {
         gap: 1.5rem;
         padding: 2rem;
+    }
+
+    .calc__btn {
+        font-size: 2rem;
+    }
+
+    .btn-func, .btn-equals {
+        font-size: 1.25rem;
     }
 }

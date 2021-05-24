@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
+  <script src='app.js' defer></script>
   <title>Frontend Mentor | Calculator app</title>
 
 </head>
@@ -15,12 +16,15 @@
       <div class="calc">
         <div class="calc__header">
           <h1 class="calc__heading">calc</h1>
-          <div class="theme__switcher">
-            <fieldset>
+          <div>
+            <fieldset class="theme__switcher">
               <legend>Theme</legend>
-              <input type="radio" name="dark" id="dark" aria-label='Dark color theme'>
-              <input type="radio" name="light" id="light" aria-label="Light color theme">
-              <input type="radio" name="neon" id="neon" aria-label="Neon color theme">
+              <input type="radio" name="theme" id="dark" value="dark-theme" aria-label='Dark color theme' checked>
+              <label for="dark">1</label>
+              <input type="radio" name="theme" id="light" value="light-theme" aria-label="Light color theme">
+              <label for="light">2</label>
+              <input type="radio" name="theme" id="neon" value="neon-theme" aria-label="Neon color theme">
+              <label for="neon">3</label>
             </fieldset>
           </div>
         </div>
