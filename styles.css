@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+@import 'themes.css';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    font-family: 'Spartan', sans-serif;
+}
+
+main {
+    width: 100%;
+}
+
+.calc__wrapper {
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    max-width: 37rem;
+}
+
+.calc__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.calc__heading {
+    font-size: 2rem;
+    color: var(--display-text);
+}
+
+.calc__display {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1.625rem;
+    background-color: var(--display-bg);
+    border-radius: 0.625rem;
+    text-align: right;
+    font-size: 2rem;
+    color: var(--display-text);
+}
+
+.calc__keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.75rem;
+    justify-items: stretch;
+    padding: 1.5rem;
+    background-color: var(--keypad-bg);
+    border-radius: 0.625rem;
+}
+
+.calc__btn {
+    padding: 0.625rem 0 0.875rem; 
+    border: 0;
+    border-radius: 0.625rem;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out           ;
+}
+
+.btn-num {
+    background-color: var(--number-key-bg);
+    color: var(--number-key-text);
+    box-shadow: inset 0 -0.25rem 0 var(--number-key-shadow);
+}
+
+.btn-num:hover {
+    background-color: var(--number-key-hover);
+}
+
+.btn-func {
+    background-color: var(--function-key-bg);
+    color: var(--function-key-text);
+    box-shadow: inset 0 -0.25rem 0 var(--function-key-shadow);
+    color: var(--function-key-text);
+}
+
+.btn-func:hover {
+    background-color: var(--function-key-hover);
+}
+
+.btn-reset {
+    grid-column: span 2;
+}
+
+.btn-equals {
+    grid-column: span 2;
+    background-color: var(--equals-key-bg);
+    color: var(--equals-key-text);
+    box-shadow: inset 0 -0.25rem 0 var(--equals-key-shadow);
+}
+
+.btn-equals:hover {
+    background-color: var(--equals-key-hover);
+}
+
+
+@media screen and (min-width: 500px) {
+    .calc__display {
+        padding: 2rem 2.25rem;
+        font-size: 3rem;
+    }
+
+    .calc__keypad {
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+}

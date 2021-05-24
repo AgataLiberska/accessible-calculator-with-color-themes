@@ -1,0 +1,67 @@
+.dark-theme {
+
+    --bg-color: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --display-bg: hsl(224, 36%, 15%);
+    --display-text: hsl(0, 100%, 100%);
+
+    --function-key-bg: hsl(225, 21%, 49%);
+    --function-key-shadow: hsl(224, 28%, 35%);
+    --function-key-text: hsl(0, 100%, 100%);
+    --function-key-hover: hsl(224, 51%, 76%);
+
+
+    --equals-key-bg: hsl(6, 63%, 50%); 
+    --equals-key-hover: hsla(6, 93%, 67%, 1);
+    --equals-key-shadow: hsl(6, 70%, 34%);
+    --equals-key-text: hsl(0, 100%, 100%);
+
+    --number-key-bg: hsl(30, 25%, 89%);
+    --number-key-hover: hsl(31, 100%, 100%);
+    --number-key-shadow: hsl(28, 16%, 65%);
+    --number-key-text: hsl(221, 14%, 31%);
+}
+
+.light-theme {
+    --bg-color:  hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --display-bg: hsl(0, 0%, 93%);
+    --display-text: hsl(60, 10%, 19%);
+
+    --function-key-bg: hsl(185, 42%, 37%);
+    --function-key-hover: hsla(184, 40%, 56%, 1);
+    --function-key-shadow: hsl(185, 58%, 25%);
+    --function-key-text: hsl(0, 100%, 100%);
+
+    --equals-key-bg: hsl(25, 98%, 40%);  
+    --equals-key-hover:               hsla(25, 100%, 61%, 1);
+    --equals-key-shadow: hsl(25, 99%, 27%);
+    --equals-key-text: hsl(0, 100%, 100%);
+
+    --number-key-bg: hsl(45, 7%, 89%);
+    --number-key-hover: hsla(0, 0%, 100%, 1);
+    --number-key-shadow: hsl(35, 11%, 61%);
+    --number-key-text: hsl(60, 10%, 19%); 
+}
+
+.neon-theme {
+    --bg-color:  hsl(268, 75%, 9%);
+    --keypad-bg: hsl(268, 71%, 12%);
+    --display-bg: hsl(268, 71%, 12%);
+    --display-text: hsl(52, 100%, 62%);
+
+    --function-key-bg: hsl(281, 89%, 26%);
+    --function-key-hover: hsla(280, 56%, 44%, 1);
+    --function-key-shadow: hsl(285, 91%, 52%);
+    --function-key-text: hsl(0, 100%, 100%);
+
+    --equals-key-bg: hsl(176, 100%, 44%);  
+    --equals-key-hover: hsla(176, 100%, 79%, 1);
+    --equals-key-shadow: hsl(177, 92%, 70%);
+    --equals-key-text: hsl(198, 20%, 13%);
+
+    --number-key-bg: hsl(268, 47%, 21%);
+    --number-key-hover: hsla(268, 54%, 44%, 1);
+    --number-key-shadow: hsl(290, 70%, 36%);
+    --number-key-text: hsl(52, 100%, 62%); 
+}

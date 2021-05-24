@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | Calculator app</title>
 
 </head>
 <body class="dark-theme" id="body">
   <main>
-    <div class="calculator__wrapper">
-      <div class="calculator">
-        <div class="calulacor__header">
-          <h1>calc</h1>
+    <div class="calc__wrapper">
+      <div class="calc">
+        <div class="calc__header">
+          <h1 class="calc__heading">calc</h1>
           <div class="theme__switcher">
             <fieldset>
               <legend>Theme</legend>
@@ -24,26 +24,26 @@
             </fieldset>
           </div>
         </div>
-        <div class="calculator__display">000</div>
-        <div class="calculator__keypad">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>del</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>&plus;</button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>&minus;</button>
-          <button>&sdot;</button>
-          <button>0</button>
-          <button>&#47;</button>
-          <button>&times;</button>
-          <button>reset</button>
-          <button>&#61;</button>
+        <div class="calc__display">000</div>
+        <div class="calc__keypad">
+          <button class="calc__btn btn-num">7</button>
+          <button class="calc__btn btn-num">8</button>
+          <button class="calc__btn btn-num">9</button>
+          <button class="calc__btn btn-func">del</button>
+          <button class="calc__btn btn-num">4</button>
+          <button class="calc__btn btn-num">5</button>
+          <button class="calc__btn btn-num">6</button>
+          <button class="calc__btn btn-num">&plus;</button>
+          <button class="calc__btn btn-num">1</button>
+          <button class="calc__btn btn-num">2</button>
+          <button class="calc__btn btn-num">3</button>
+          <button class="calc__btn btn-num">&minus;</button>
+          <button class="calc__btn btn-num">&#46;</button>
+          <button class="calc__btn btn-num">0</button>
+          <button class="calc__btn btn-num">&#47;</button>
+          <button class="calc__btn btn-num">&times;</button>
+          <button class="calc__btn btn-func btn-reset">reset</button>
+          <button class="calc__btn btn-equals">&#61;</button>
         </div>
       </div>
     </div>
