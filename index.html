@@ -8,19 +8,45 @@
   
   <title>Frontend Mentor | Calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<body class="dark-theme" id="body">
+  <main>
+    <div class="calculator__wrapper">
+      <div class="calculator">
+        <div class="calulacor__header">
+          <h1>calc</h1>
+          <div class="theme__switcher">
+            <fieldset>
+              <legend>Theme</legend>
+              <input type="radio" name="dark" id="dark" aria-label='Dark color theme'>
+              <input type="radio" name="light" id="light" aria-label="Light color theme">
+              <input type="radio" name="neon" id="neon" aria-label="Neon color theme">
+            </fieldset>
+          </div>
+        </div>
+        <div class="calculator__display">000</div>
+        <div class="calculator__keypad">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>del</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>&plus;</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>&minus;</button>
+          <button>&sdot;</button>
+          <button>0</button>
+          <button>&#47;</button>
+          <button>&times;</button>
+          <button>reset</button>
+          <button>&#61;</button>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
