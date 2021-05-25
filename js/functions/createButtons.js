@@ -7,6 +7,7 @@ function createButtons() {
         let newBtn = document.createElement('button');
         newBtn.innerHTML = item.symbol;
         newBtn.classList = item.class;
+        newBtn.setAttribute('id', item.name);
         keypad.appendChild(newBtn);
     })
 }
