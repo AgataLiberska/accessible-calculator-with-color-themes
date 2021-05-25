@@ -1,26 +1,8 @@
 import buttons from '../buttons.js';
-
+import doubleDecimal from './calculatorFunctions/doubleDecimal.js';
 
 let output = [];
 let result = [];
-
-function doubleDecimal() {
-    const operators = [output.lastIndexOf('+'), output.lastIndexOf('-'), output.lastIndexOf('/'), output.lastIndexOf('*')];
-    
-    const lastOperator = operators.reduce((last, operator) => {
-        if (last < operator) {
-            return operator;
-        } return last;
-    });
-
-    const lastNumberArr = lastOperator > 0 ? output.slice(lastOperator) : output;
-
-    if (lastNumberArr.includes('.')) {
-        return true;
-    } 
-
-    return false;
-}
 
 function updateDisplay() {
     const display = document.getElementById('display');
@@ -52,7 +34,7 @@ function handleClick(e) {
                         result.push(btn.value);
                     } else {
                         // make sure there is no double decimal
-                        if (btn.value === '.' && doubleDecimal()) {
+                        if (btn.value === '.' && doubleDecimal(output)) {
                             return;
                         } else if (btn.value === '.' && !output.length) {
                             output.push(0);
@@ -76,6 +58,10 @@ function handleClick(e) {
                     result = [];
                     updateDisplay();
                     break;
+                case 'calculate':
+                    let sum = (new Function('return '+ output.join(''))());
+                    output = [sum];
+                    updateDisplay();
             }
         }
     })
