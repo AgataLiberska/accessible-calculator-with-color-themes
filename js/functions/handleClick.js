@@ -1,14 +1,12 @@
 import buttons from '../buttons.js';
+
 import doubleDecimal from './calculatorFunctions/doubleDecimal.js';
+import formatInput from './calculatorFunctions/formatInput.js';
+import updateDisplay from './calculatorFunctions/updateDisplay.js';
 
-let output = [];
-let result = [];
+const operators = ['+', '-', '/', '*'];
+let input = [];
 
-function updateDisplay() {
-    const display = document.getElementById('display');
-
-    display.innerText = output.length > 0 ? output.join('') : '0';
-}
 
 function handleClick(e) {
     
@@ -16,53 +14,44 @@ function handleClick(e) {
         if (btn.name === e.target.id) {
             switch (btn.type) {
                 case 'number':
-                    // if the output is 0, get rid of that 0
-                    if (output.length === 1 && output[0] === 0) {
-                        output.pop();
-                        result.pop();
+                    // if the input is 0, get rid of that 0
+                    if (input.length === 1 && input[0] === 0) {
+                        input.pop();
                     }
-                    output.push(btn.value);
-                    result.push(btn.value);
-                    updateDisplay();
+                    input.push(btn.value);
+                    updateDisplay(formatInput(input, operators));
                     break;
                 case 'operator':
-                    if (['+','-','.','/','*'].includes(output[output.length-1])) {
+                    if ([...operators, '.'].includes(input[input.length-1])) {
                         // if the last char is an operator, replace it
-                        output.pop();
-                        output.push(btn.value);
-                        result.pop();
-                        result.push(btn.value);
+                        input.pop();
+                        input.push(btn.value);
                     } else {
                         // make sure there is no double decimal
-                        if (btn.value === '.' && doubleDecimal(output)) {
+                        if (btn.value === '.' && doubleDecimal(input, operators)) {
                             return;
-                        } else if (btn.value === '.' && !output.length) {
-                            output.push(0);
-                            output.push(btn.value);
-                            result.push(0);
-                            result.push(btn.value);
+                        } else if (btn.value === '.' && !input.length) {
+                            input.push(0);
+                            input.push(btn.value);
                         } else {
-                            output.push(btn.value);
-                            result.push(btn.value);
+                            input.push(btn.value);
                         }
                     }
-                    updateDisplay();
+                    updateDisplay(formatInput(input, operators));
                     break;
                 case 'delete':
-                    output.pop();
-                    result.pop();
-                    updateDisplay();
+                    input.pop();
+                    updateDisplay(formatInput(input, operators));
                     break;
                 case 'reset':
-                    output = [];
-                    result = [];
-                    updateDisplay();
+                    input = [];
+                    updateDisplay(formatInput(input, operators));
                     break;
                 case 'calculate':
-                    let sum = (new Function('return '+ output.join(''))());
-                    output = [sum];
-                    console.log(output);
-                    updateDisplay();
+                    // IF THE LAST INPUT WAS AN OPERATOR THEN GET RID OF IT
+                    let result = (new Function('return '+ input.join(''))());
+                    input = [];
+                    updateDisplay(result);
             }
         }
     })
