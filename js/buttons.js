@@ -23,7 +23,7 @@ const buttons = [
     {
         name: 'del',
         symbol: 'del',
-        action: 'delete',
+        value: 'del',
         type: 'delete',
         class: 'calc__btn btn-func'
     },
@@ -52,7 +52,6 @@ const buttons = [
         name: 'plus',
         symbol: '&plus;',
         value: '+',
-        action: 'add',
         type: 'operator',
         class: 'calc__btn btn-num'
     },
@@ -81,7 +80,6 @@ const buttons = [
         name: 'minus',
         symbol: '&minus;',
         value: '-',
-        action: 'substract',
         type: 'operator',
         class: 'calc__btn btn-num'
     },
@@ -89,8 +87,7 @@ const buttons = [
         name: 'decimal',
         symbol: '&#46;',
         value: '.',
-        action: 'decimal',
-        type: 'operator',
+        type: 'decimal',
         class: 'calc__btn btn-num'
     },
     {
@@ -104,7 +101,6 @@ const buttons = [
         name: 'divide',
         symbol: '&#47;',
         value: '/',
-        action: 'divide',
         type: 'operator',
         class: 'calc__btn btn-num'
     },
@@ -112,21 +108,20 @@ const buttons = [
         name: 'multiply',
         symbol: '&times;',
         value: '*',
-        action: 'multiply',
         type: 'operator',
         class: 'calc__btn btn-num'
     },
     {
         name: 'reset',
         symbol: 'reset',
-        action: 'reset',
+        value: 'reset',
         type: 'reset',
         class: 'calc__btn btn-func btn-reset'
     },
     {
         name: 'calculate',
         symbol: '&#61;',
-        action: 'calculate',
+        value: 'calculate',
         type: 'calculate',
         class: 'calc__btn btn-equals'
     },

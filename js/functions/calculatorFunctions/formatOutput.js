@@ -1,6 +1,6 @@
 import findLastOperator from './findLastOperator.js';
 
-function formatInput(input, operators) {
+function formatOutput(input, operators) {
     const output = [];
 
     // IF THERE ARE OPERATORS IN THE INPUT, separate the numbers out
@@ -28,12 +28,16 @@ function formatInput(input, operators) {
     } 
     //if no operators, just format the number    
     else {
+        console.log(Number(input.join('')), 'number');
         output.push(Number(input.join('')).toLocaleString('en-UK'));
+        if (input[input.length-1] === '.') {
+            output.push('.');
+        }
     }
 
     // and display
-
+    console.log('output', output);
     return output.length > 0 ? output.join('') : '0';
 }
 
-export default formatInput;
+export default formatOutput;
