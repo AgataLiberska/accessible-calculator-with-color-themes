@@ -61,6 +61,7 @@ function handleClick(e) {
                 case 'calculate':
                     let sum = (new Function('return '+ output.join(''))());
                     output = [sum];
+                    console.log(output);
                     updateDisplay();
             }
         }

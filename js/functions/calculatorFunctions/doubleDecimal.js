@@ -8,8 +8,8 @@ function doubleDecimal(output) {
     });
 
     const lastNumberArr = lastOperator > 0 ? output.slice(lastOperator) : output;
-
-    if (lastNumberArr.includes('.')) {
+    const lastNumber = lastNumberArr.join('');
+    if (lastNumber % 1 !== 0) {
         return true;
     } 
 
