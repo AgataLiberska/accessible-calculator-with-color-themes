@@ -5,22 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles.css">
+  <script src='js/app.js' type="module"></script>
   <title>Frontend Mentor | Calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<body class="dark-theme" id="body">
+  <main>
+    <div class="calc__wrapper">
+      <div class="calc">
+        <div class="calc__header">
+          <h1 class="calc__heading">calc</h1>
+          <div>
+            <fieldset class="theme__switcher">
+              <legend>Theme</legend>
+              <input type="radio" name="theme" id="dark" value="dark-theme" aria-label='Dark color theme'>
+              <label for="dark">1</label>
+              <input type="radio" name="theme" id="light" value="light-theme" aria-label="Light color theme" checked>
+              <label for="light">2</label>
+              <input type="radio" name="theme" id="neon" value="neon-theme" aria-label="Neon color theme">
+              <label for="neon">3</label>
+            </fieldset>
+          </div>
+        </div>
+        <div class="calc__display">
+          <p id='display'>0</p>
+        </div>
+        <div class="calc__keypad" id="keypad">
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
