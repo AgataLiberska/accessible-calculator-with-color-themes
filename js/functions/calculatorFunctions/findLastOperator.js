@@ -4,7 +4,7 @@ function findLastOperator(haystack, operatorArr) {
     operatorArr.forEach(item => {
         operatorIndexes.push(haystack.lastIndexOf(item));
     })
-
+    console.log(operatorIndexes);
     const lastOperator = operatorIndexes.reduce((last, operator) => {
         if (last < operator) {
             return operator;
