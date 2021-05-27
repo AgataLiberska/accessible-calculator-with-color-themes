@@ -28,15 +28,14 @@ function formatOutput(input, operators) {
     } 
     //if no operators, just format the number    
     else {
-        console.log(Number(input.join('')), 'number');
         output.push(Number(input.join('')).toLocaleString('en-UK'));
-        if (input[input.length-1] === '.') {
-            output.push('.');
-        }
+    }
+
+    if (input[input.length-1] === '.') {
+        output.push('.');
     }
 
     // and display
-    console.log('output', output);
     return output.length > 0 ? output.join('') : '0';
 }
 
