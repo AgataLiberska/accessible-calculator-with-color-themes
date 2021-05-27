@@ -1,6 +1,7 @@
 import doubleDecimal from './calculatorFunctions/doubleDecimal.js';
 import formatOutput from './calculatorFunctions/formatOutput.js';
 import updateDisplay from './calculatorFunctions/updateDisplay.js';
+import calculate from './calculatorFunctions/calculate.js';
 
 const operators = ['+', '-', '/', '*'];
 let input = [];
@@ -43,7 +44,7 @@ function calculator(btn) {
             break;
         case 'calculate':
             // IF THE LAST INPUT WAS AN OPERATOR THEN GET RID OF IT
-            result = (new Function('return '+ input.join(''))());
+            result = calculate(input, operators);
             input = [];
             input.push(result);
     }
