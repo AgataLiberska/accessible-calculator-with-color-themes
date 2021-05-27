@@ -249,7 +249,7 @@ main {
     outline: 2px dotted var(--equals-key-bg);
 }
 
-.calc__btn:active {
+.calc__btn:active, .calc__btn.active {
     transform: scale(0.9);
 }
 
@@ -259,9 +259,10 @@ main {
     box-shadow: inset 0 -0.25rem 0 var(--number-key-shadow);
 }
 
-.btn-num:hover {
+.btn-num:hover, .calc__btn.active {
     background-color: var(--number-key-hover);
 }
+
 
 .btn-func {
     background-color: var(--function-key-bg);
@@ -272,7 +273,7 @@ main {
     text-transform: uppercase;
 }
 
-.btn-func:hover {
+.btn-func:hover, .btn-func.active {
     background-color: var(--function-key-hover);
 }
 
@@ -288,7 +289,7 @@ main {
     font-size: 1rem;
 }
 
-.btn-equals:hover {
+.btn-equals:hover, .btn-equals.active {
     background-color: var(--equals-key-hover);
 }
 

@@ -21,7 +21,7 @@ const buttons = [
         class: 'calc__btn btn-num'
     },
     {
-        name: 'Delete',
+        name: 'Backspace',
         symbol: 'del',
         value: 'del',
         type: 'delete',
