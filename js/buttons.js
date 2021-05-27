@@ -21,7 +21,7 @@ const buttons = [
         class: 'calc__btn btn-num'
     },
     {
-        name: 'del',
+        name: 'Delete',
         symbol: 'del',
         value: 'del',
         type: 'delete',
@@ -49,7 +49,7 @@ const buttons = [
         class: 'calc__btn btn-num'
     },
     {
-        name: 'plus',
+        name: '+',
         symbol: '&plus;',
         value: '+',
         type: 'operator',
@@ -77,14 +77,14 @@ const buttons = [
         class: 'calc__btn btn-num'
     },
     {
-        name: 'minus',
+        name: '-',
         symbol: '&minus;',
         value: '-',
         type: 'operator',
         class: 'calc__btn btn-num'
     },
     {
-        name: 'decimal',
+        name: '.',
         symbol: '&#46;',
         value: '.',
         type: 'decimal',
@@ -98,28 +98,28 @@ const buttons = [
         class: 'calc__btn btn-num'
     },
     {
-        name: 'divide',
+        name: '/',
         symbol: '&#47;',
         value: '/',
         type: 'operator',
         class: 'calc__btn btn-num'
     },
     {
-        name: 'multiply',
+        name: '*',
         symbol: '&times;',
         value: '*',
         type: 'operator',
         class: 'calc__btn btn-num'
     },
     {
-        name: 'reset',
+        name: 'Delete',
         symbol: 'reset',
         value: 'reset',
         type: 'reset',
         class: 'calc__btn btn-func btn-reset'
     },
     {
-        name: 'calculate',
+        name: '=',
         symbol: '&#61;',
         value: 'calculate',
         type: 'calculate',

@@ -1,6 +1,7 @@
 import { setTheme, setInitialTheme } from './functions/themeSwitcher.js';
 import createButtons from './functions/createButtons.js';
 import handleClick from './functions/handleClick.js';
+import handleKeys from './functions/handleKeys.js';
 
 createButtons();
 setInitialTheme();
@@ -19,3 +20,5 @@ inputs.forEach(input => {
 btnEls.forEach(button => {
     button.addEventListener('click', handleClick);
 })
+
+document.addEventListener('keydown', handleKeys);
