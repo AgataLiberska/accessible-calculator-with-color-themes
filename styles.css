@@ -217,8 +217,8 @@ main {
     padding: 1.5rem 1.625rem;
     background-color: var(--display-bg);
     border-radius: 0.625rem;
-    text-align: right;
     font-size: 2rem;
+    text-align: right;
     color: var(--display-text);
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 }

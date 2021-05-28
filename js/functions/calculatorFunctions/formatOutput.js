@@ -2,7 +2,6 @@ import findLastOperator from './findLastOperator.js';
 
 function formatOutput(input, operators) {
     const output = [];
-    console.log('input',input);
     
     if (!input.length) {
         return '0';
@@ -28,7 +27,6 @@ function formatOutput(input, operators) {
         if (!operators.includes(input[input.length-1])) {
             const lastOperator = findLastOperator(input, operators);
             const lastNumber = input.slice(lastOperator + 1).join('');
-            console.log('lastnumber', lastNumber);
             output.push(lastNumber);
         }
     } else if (input.includes('Not allowed')) {
@@ -44,7 +42,6 @@ function formatOutput(input, operators) {
     // }
 
     // and display
-    console.log(output);
     return output.length > 0 ? output.join('') : '0';
 }
 
