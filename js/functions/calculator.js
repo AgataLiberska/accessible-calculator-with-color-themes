@@ -1,16 +1,18 @@
 import doubleDecimal from './calculatorFunctions/doubleDecimal.js';
 import formatOutput from './calculatorFunctions/formatOutput.js';
+import formatResult from './calculatorFunctions/formatResult.js';
 import updateDisplay from './calculatorFunctions/updateDisplay.js';
 import calculate from './calculatorFunctions/calculate.js';
 
 const operators = ['+', '-', '/', '*'];
+const maxLength = 17;
 let input = [];
 let result;
 
 function calculator(btn) {
     switch (btn.type) {
         case 'number':
-            if (input.length >= 17) {
+            if (input.length >= maxLength) {
                 return;
             }
             // if the input is 0, get rid of that 0
@@ -24,7 +26,7 @@ function calculator(btn) {
             updateDisplay(formatOutput(input, operators));
             break;
         case 'operator':
-            if (input.length > 17) {
+            if (input.length >= maxLength) {
                 return;
             }
             else if ([...operators, '.'].includes(input[input.length-1])) {
@@ -35,7 +37,7 @@ function calculator(btn) {
             updateDisplay(formatOutput(input, operators));
             break;
         case 'decimal':
-            if (input.length > 17) {
+            if (input.length >= maxLength) {
                 return;
             }
             else if (doubleDecimal(input, operators)) {
@@ -67,7 +69,7 @@ function calculator(btn) {
             result = calculate(input, operators);
             input = [];
             input.push(result);
-            updateDisplay(result);
+            updateDisplay(formatResult(result, maxLength));
     }
 }
 
