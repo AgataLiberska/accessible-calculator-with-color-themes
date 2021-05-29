@@ -225,7 +225,6 @@ main {
 
 .calc__keypad {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 0.75rem;
     justify-items: stretch;
@@ -233,6 +232,13 @@ main {
     background-color: var(--keypad-bg);
     border-radius: 0.625rem;
     transition: background-color 200ms ease-in-out;
+}
+
+.calc__keypad__row  {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    width: 100%;
 }
 
 .calc__btn {
