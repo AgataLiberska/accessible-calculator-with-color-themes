@@ -18,7 +18,7 @@
           <h1 class="calc__heading">calc</h1>
           <div>
             <fieldset class="theme__switcher">
-              <legend>Theme</legend>
+              <legend aria-label="Choose color theme">Theme</legend>
               <input type="radio" name="theme" id="dark" value="dark-theme" aria-label='Dark color theme'>
               <label for="dark">1</label>
               <input type="radio" name="theme" id="light" value="light-theme" aria-label="Light color theme" checked>
@@ -29,9 +29,11 @@
           </div>
         </div>
         <div class="calc__display">
-          <p id='display'>0</p>
+          <p id='display' aria-live="polite">0</p>
         </div>
-        <div class="calc__keypad" id="keypad">
+        <div class="calc__keypad" id="keypad" role="grid" aria-label="Calculator Keypad">
+
+          </div>
         </div>
       </div>
     </div>

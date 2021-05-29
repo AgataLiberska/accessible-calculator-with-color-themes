@@ -217,15 +217,14 @@ main {
     padding: 1.5rem 1.625rem;
     background-color: var(--display-bg);
     border-radius: 0.625rem;
-    text-align: right;
     font-size: 2rem;
+    text-align: right;
     color: var(--display-text);
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 }
 
 .calc__keypad {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 0.75rem;
     justify-items: stretch;
@@ -235,8 +234,25 @@ main {
     transition: background-color 200ms ease-in-out;
 }
 
+.calc__keypad__row  {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.calc__keypad__gridcell {
+    display: block;
+    width: 100%;
+}
+
+.calc__keypad__row:last-of-type .calc__keypad__gridcell {
+    grid-column: span 2;
+}
+
 .calc__btn {
     padding: 0.625rem 0 0.875rem; 
+    width: 100%;
     border: 0;
     border-radius: 0.625rem;
     font-size: 1.75rem;
@@ -277,12 +293,7 @@ main {
     background-color: var(--function-key-hover);
 }
 
-.btn-reset {
-    grid-column: span 2;
-}
-
 .btn-equals {
-    grid-column: span 2;
     background-color: var(--equals-key-bg);
     color: var(--equals-key-text);
     box-shadow: inset 0 -0.25rem 0 var(--equals-key-shadow);

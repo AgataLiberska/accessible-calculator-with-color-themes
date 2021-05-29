@@ -116,7 +116,7 @@ const buttons = [
         symbol: 'reset',
         value: 'reset',
         type: 'reset',
-        class: 'calc__btn btn-func btn-reset'
+        class: 'calc__btn btn-func'
     },
     {
         name: '=',
