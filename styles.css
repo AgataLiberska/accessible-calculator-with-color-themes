@@ -241,8 +241,18 @@ main {
     width: 100%;
 }
 
+.calc__keypad__gridcell {
+    display: block;
+    width: 100%;
+}
+
+.calc__keypad__row:last-of-type .calc__keypad__gridcell {
+    grid-column: span 2;
+}
+
 .calc__btn {
     padding: 0.625rem 0 0.875rem; 
+    width: 100%;
     border: 0;
     border-radius: 0.625rem;
     font-size: 1.75rem;
@@ -283,12 +293,7 @@ main {
     background-color: var(--function-key-hover);
 }
 
-.btn-reset {
-    grid-column: span 2;
-}
-
 .btn-equals {
-    grid-column: span 2;
     background-color: var(--equals-key-bg);
     color: var(--equals-key-text);
     box-shadow: inset 0 -0.25rem 0 var(--equals-key-shadow);

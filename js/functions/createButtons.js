@@ -15,6 +15,10 @@ function createButtons() {
 
         const lastRow = document.querySelector('.calc__keypad__row:last-child');
 
+        let newGridCell = document.createElement('span');
+        newGridCell.setAttribute('role', 'gridcell');
+        newGridCell.classList = 'calc__keypad__gridcell'
+
         let newBtn = document.createElement('button');
         newBtn.innerHTML = item.symbol;
         newBtn.classList = item.class;
@@ -25,8 +29,9 @@ function createButtons() {
         } else {
             newBtn.setAttribute('tabindex', '-1');
         }
-        
-        lastRow.appendChild(newBtn);
+        newGridCell.appendChild(newBtn);
+
+        lastRow.appendChild(newGridCell);
 
         createdBtns ++;
     })

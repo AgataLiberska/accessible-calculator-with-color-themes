@@ -1,45 +1,45 @@
-function moveFocus(fromHere, toThere) {
+function moveFocus(fromIndex, toIndex) {
     const buttons = Array.from(document.querySelectorAll('button'));
     const btnsPerRow = 4;
 
-    switch (toThere) {
+    switch (toIndex) {
         case 'up': 
             //if we're in the first row, nothing happens
-            if (fromHere < btnsPerRow) {
+            if (fromIndex < btnsPerRow) {
                 return;
             }
             // if we're on the last row, choose which button because they span 2
-            else if (fromHere === buttons.length-1) {
-                buttons[fromHere-3].focus();
+            else if (fromIndex === buttons.length-1) {
+                buttons[fromIndex-3].focus();
             }
             //else we're moving indexes by 4
             else {
-                buttons[fromHere-btnsPerRow].focus();
+                buttons[fromIndex-btnsPerRow].focus();
             }
             break;
         case 'down':
             // if we're in the last row, nothing happens
-            if (fromHere === buttons.length-1|| fromHere === buttons.length-2) {
+            if (fromIndex === buttons.length-1|| fromIndex === buttons.length-2) {
                 return;
             }
             else {
-                buttons[fromHere + btnsPerRow].focus();
+                buttons[fromIndex + btnsPerRow].focus();
             }
             break;
         case 'left':
             //if it's the first button, do nothing
-            if (fromHere === 0) {
+            if (fromIndex === 0) {
                 return;
             } else {
-                buttons[fromHere - 1].focus();
+                buttons[fromIndex - 1].focus();
             }
             break;
         case 'right':
             //if it's the last button, do nothing
-            if (fromHere === buttons.length-1) {
+            if (fromIndex === buttons.length-1) {
                 return;
             } else {
-                buttons[fromHere + 1].focus();
+                buttons[fromIndex + 1].focus();
             }
             break;
     }
