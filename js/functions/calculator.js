@@ -70,10 +70,14 @@ function calculator(btn) {
             updateDisplay(formatOutput(input, operators));
             break;
         case 'calculate':
-            result = calculate(input, operators);
-            input = [];
-            input.push(result);
-            updateDisplay(formatResult(result, maxLength));
+            if (input.length === 0) {
+                return;
+            } else {
+                result = calculate(input, operators);
+                input = [];
+                input.push(result);
+                updateDisplay(formatResult(result, maxLength));
+            }
     }
 }
 
