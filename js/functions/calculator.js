@@ -40,18 +40,23 @@ function calculator(btn) {
             if (input.length >= maxLength) {
                 return;
             }
-            else if (doubleDecimal(input, operators)) {
-                console.log('doubledot')
-                return;
-            } 
             else if (!input.length)  {
                 input.push(0);
                 input.push(btn.value);
-            } else if (input.length === 1 && input[0] === result) {
+            } 
+            else if (input.length === 1 && input[0] === result) {
                 input = [];
                 input.push(0);
                 input.push(btn.value);
-            } else {
+            } 
+            else if (operators.includes(input[input.length-1])) {
+                input.push(0);
+                input.push(btn.value);
+            }
+            else if (doubleDecimal(input, operators)) {
+                return;
+            } 
+            else {
                 input.push(btn.value);
             }
             updateDisplay(formatOutput(input, operators));
@@ -65,7 +70,6 @@ function calculator(btn) {
             updateDisplay(formatOutput(input, operators));
             break;
         case 'calculate':
-            // IF THE LAST INPUT WAS AN OPERATOR THEN GET RID OF IT
             result = calculate(input, operators);
             input = [];
             input.push(result);
