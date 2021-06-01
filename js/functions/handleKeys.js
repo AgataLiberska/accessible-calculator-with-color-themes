@@ -3,7 +3,7 @@ import findFocusedIndex from './calculatorFunctions/findFocusedIndex.js';
 import moveFocus from './calculatorFunctions/moveFocus.js';
 
 function handleKeys(e) {
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('.js-calc-btn');
     const closeNUX = document.getElementById('close-nux-btn');
     
     if (e.key === 'Enter') {
