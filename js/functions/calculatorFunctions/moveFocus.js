@@ -1,6 +1,10 @@
 function moveFocus(fromIndex, toIndex) {
     const buttons = Array.from(document.querySelectorAll('button'));
     const btnsPerRow = 4;
+    const decimalBtnIndex = 12;
+    const zeroBtnIndex = 13;
+    const divideBtnIndex = 14;
+    const multiplyBtnIndex = 15;
 
     switch (toIndex) {
         case 'up': 
@@ -8,9 +12,9 @@ function moveFocus(fromIndex, toIndex) {
             if (fromIndex < btnsPerRow) {
                 return;
             }
-            // if we're on the last row, choose which button because they span 2
+            // if we're on the last btn which spans 2, go to /
             else if (fromIndex === buttons.length-1) {
-                buttons[fromIndex-3].focus();
+                buttons[fromIndex-(btnsPerRow-1)].focus();
             }
             //else we're moving indexes by 4
             else {
@@ -21,6 +25,12 @@ function moveFocus(fromIndex, toIndex) {
             // if we're in the last row, nothing happens
             if (fromIndex === buttons.length-1|| fromIndex === buttons.length-2) {
                 return;
+            }
+            // if . or 0, move to reset, / or x move to =
+            else if (fromIndex === decimalBtnIndex || fromIndex === zeroBtnIndex) {
+                buttons[buttons.length-2].focus();
+            } else if (fromIndex === divideBtnIndex || fromIndex === multiplyBtnIndex) {
+                buttons[buttons.length-1].focus();
             }
             else {
                 buttons[fromIndex + btnsPerRow].focus();
