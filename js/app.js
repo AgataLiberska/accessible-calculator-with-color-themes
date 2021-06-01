@@ -9,12 +9,18 @@ setInitialTheme();
 const inputs = document.querySelectorAll('input[name="theme"]');
 const btnEls = document.querySelectorAll('button');
 
-
+const NUX = document.getElementById('grid-nux');
+console.log(firstGridBtn);
 
 inputs.forEach(input => {
     input.addEventListener('input', e => {
         setTheme(e.target.value);
     })
+})
+
+firstGridBtn.addEventListener('focus', e => {
+
+    NUX.classList.remove('hidden');
 })
 
 btnEls.forEach(button => {
