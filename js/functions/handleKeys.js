@@ -4,11 +4,15 @@ import moveFocus from './calculatorFunctions/moveFocus.js';
 
 function handleKeys(e) {
     const buttons = document.querySelectorAll('button');
+    const closeNUX = document.getElementById('close-nux-btn');
     
     if (e.key === 'Enter') {
-        e.preventDefault();
-        pressButton(document.getElementById('='));
-        return;
+        if (document.activeElement === closeNUX) {
+            return;
+        } else {
+            e.preventDefault();
+            pressButton(document.getElementById('='));
+        }
     } 
     
     else if (e.keyCode >= 37 && e.keyCode <= 40) {

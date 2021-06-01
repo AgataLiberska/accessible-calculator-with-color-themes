@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
 
 
 .dark-theme {
@@ -125,6 +125,7 @@ main {
     width: 4.5rem;
     margin-right: 0.25rem;
     border: 0;
+    font-weight: 700;
 }
 
 .theme__switcher legend {
@@ -218,9 +219,14 @@ main {
     background-color: var(--display-bg);
     border-radius: 0.625rem;
     font-size: 2rem;
+    font-weight: 700;
     text-align: right;
     color: var(--display-text);
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.calc__keypad-wrapper {
+    position: relative;
 }
 
 .calc__keypad {
@@ -256,6 +262,7 @@ main {
     border: 0;
     border-radius: 0.625rem;
     font-size: 1.75rem;
+    font-weight: 700;
     line-height: 2.25rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -304,6 +311,47 @@ main {
     background-color: var(--equals-key-hover);
 }
 
+.grid__NUX {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    left: 1.5rem;
+    width: calc(100% - 3rem); 
+    
+    border-radius: 5px;
+    padding: 1rem;
+    background: var(--bg-color);
+    color:var(--display-text);
+}
+
+.grid__NUX:focus {
+    outline: 3px dotted var(--equals-key-bg);
+}
+
+.grid__NUX p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5rem;
+}
+
+.grid__NUX button {
+    background: transparent;
+    padding: 0.5rem;
+    border: 0;
+    text-decoration: underline;
+    color: var(--display-text);
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.grid__NUX button:focus {
+    outline: 3px dotted var(--equals-key-bg);
+}
+
+.grid__NUX.hidden {
+    display: none;
+}
+
 
 @media screen and (min-width: 500px) {
     .calc__display {
@@ -322,5 +370,11 @@ main {
 
     .btn-func, .btn-equals {
         font-size: 1.25rem;
+    }
+
+    .grid__NUX {
+        width:70%;
+        top: 6rem;
+        left: 2rem;
     }
 }
