@@ -21,7 +21,7 @@ function createButtons() {
 
         let newBtn = document.createElement('button');
         newBtn.innerHTML = item.symbol;
-        newBtn.classList = item.class;
+        newBtn.classList = `${item.class} js-calc-btn`;
         newBtn.setAttribute('id', item.name);
 
         if (createdBtns === 0) {

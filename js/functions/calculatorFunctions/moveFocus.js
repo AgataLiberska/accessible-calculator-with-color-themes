@@ -1,5 +1,5 @@
 function moveFocus(fromIndex, toIndex) {
-    const buttons = Array.from(document.querySelectorAll('button'));
+    const buttons = Array.from(document.querySelectorAll('.js-calc-btn'));
     const btnsPerRow = 4;
     const decimalBtnIndex = 12;
     const zeroBtnIndex = 13;
@@ -29,7 +29,9 @@ function moveFocus(fromIndex, toIndex) {
             // if . or 0, move to reset, / or x move to =
             else if (fromIndex === decimalBtnIndex || fromIndex === zeroBtnIndex) {
                 buttons[buttons.length-2].focus();
-            } else if (fromIndex === divideBtnIndex || fromIndex === multiplyBtnIndex) {
+            } 
+            
+            else if (fromIndex === divideBtnIndex || fromIndex === multiplyBtnIndex) {
                 buttons[buttons.length-1].focus();
             }
             else {

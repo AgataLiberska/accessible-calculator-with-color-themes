@@ -7,8 +7,8 @@ setInitialTheme();
 import handleClick from './functions/handleClick.js';
 import handleKeys from './functions/handleKeys.js';
 const inputs = document.querySelectorAll('input[name="theme"]');
-const btnEls = document.querySelectorAll('button');
-const firstGridBtn = document.querySelector('button[tabindex="0"]');
+const btnEls = document.querySelectorAll('.js-calc-btn');
+const firstGridBtn = document.querySelector('.js-calc-btn');
 const NUX = document.getElementById('grid-nux');
 const closeNUX = document.getElementById('close-nux-btn');
 
