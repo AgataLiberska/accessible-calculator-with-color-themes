@@ -1,16 +1,33 @@
 import { setTheme, setInitialTheme } from './functions/themeSwitcher.js';
 import createButtons from './functions/createButtons.js';
-import handleClick from './functions/handleClick.js';
-import handleKeys from './functions/handleKeys.js';
 
 createButtons();
 setInitialTheme();
 
+import handleClick from './functions/handleClick.js';
+import handleKeys from './functions/handleKeys.js';
 const inputs = document.querySelectorAll('input[name="theme"]');
 const btnEls = document.querySelectorAll('button');
-
+const firstGridBtn = document.querySelector('button[tabindex="0"]');
 const NUX = document.getElementById('grid-nux');
-console.log(firstGridBtn);
+const closeNUX = document.getElementById('close-nux-btn');
+
+let mouseDown = false;
+
+const showInstructions = () => {
+    if (mouseDown) {
+        e.target.blur();
+    } else {
+        firstGridBtn.removeEventListener('focus', showInstructions);
+        NUX.classList.remove('hidden');
+        NUX.focus();
+    }
+}
+
+const hideInstructions = () => {
+    NUX.classList.add('hidden');
+    firstGridBtn.focus();
+}
 
 inputs.forEach(input => {
     input.addEventListener('input', e => {
@@ -18,10 +35,17 @@ inputs.forEach(input => {
     })
 })
 
-firstGridBtn.addEventListener('focus', e => {
-
-    NUX.classList.remove('hidden');
+firstGridBtn.addEventListener('mousedown', () => {
+    mouseDown = true;
 })
+
+firstGridBtn.addEventListener('mouseup', () => {
+    mouseDown = false;
+})
+
+firstGridBtn.addEventListener('focus', showInstructions);
+
+closeNUX.addEventListener('click', hideInstructions);
 
 btnEls.forEach(button => {
     button.addEventListener('click', handleClick);
