@@ -102,9 +102,7 @@ const showInstructions = () => {
 
 - Unfortunately due to differences between screen readers, this solution is not perfect. When testing it with NVDA screen reader, I realised that the screen reader defines custom behaviour for arrow keys, and overriding it seems counterproductive. I will need to learn more about the differences between different screen readers to be able to plan for this.
 
-- 
-
-### Issues + Continued development
+### Continued development
 
 I significantly underestimated the time this challenge would take. I think taking more time to plan the behaviour of the app would help me avoid time-consuming corrections.
 

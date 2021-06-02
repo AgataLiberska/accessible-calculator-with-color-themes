@@ -32,6 +32,9 @@ function calculator(btn) {
             else if ([...operators, '.'].includes(input[input.length-1])) {
                 // if the last char is an operator, replace it
                 input.pop();
+            } else if (input.length === 1 && input[0] === 'Not allowed') {
+                input = [];
+                input.push(0);
             }
             input.push(btn.value);
             updateDisplay(formatOutput(input, operators));
@@ -77,6 +80,8 @@ function calculator(btn) {
                 input = [];
                 input.push(result);
                 updateDisplay(formatResult(result, maxLength));
+                console.log(input);
+                console.log(result)
             }
     }
 }
