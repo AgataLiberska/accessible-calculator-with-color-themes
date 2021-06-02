@@ -19,19 +19,22 @@ function handleKeys(e) {
         // find which key (id) is currently focused
         let currentIndex = findFocusedIndex();
         // move focus
-        switch (e.key) {
-            case 'ArrowDown':
-                moveFocus(currentIndex, 'down');
-                break;
-            case 'ArrowUp':
-                moveFocus(currentIndex, 'up');
-                break;
-            case 'ArrowLeft':
-                moveFocus(currentIndex, 'left');
-                break;
-            case 'ArrowRight':
-                moveFocus(currentIndex, 'right');
-                break;
+
+        if (currentIndex != undefined) {
+            switch (e.key) {
+                case 'ArrowDown':
+                    moveFocus(currentIndex, 'down');
+                    break;
+                case 'ArrowUp':
+                    moveFocus(currentIndex, 'up');
+                    break;
+                case 'ArrowLeft':
+                    moveFocus(currentIndex, 'left');
+                    break;
+                case 'ArrowRight':
+                    moveFocus(currentIndex, 'right');
+                    break;
+            }
         }
     } 
     
