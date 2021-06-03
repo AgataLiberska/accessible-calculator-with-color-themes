@@ -3,6 +3,7 @@ import formatOutput from './calculatorFunctions/formatOutput.js';
 import formatResult from './calculatorFunctions/formatResult.js';
 import updateDisplay from './calculatorFunctions/updateDisplay.js';
 import calculate from './calculatorFunctions/calculate.js';
+import getDigitCount from './calculatorFunctions/getDigitCount.js';
 
 const operators = ['+', '-', '/', '*'];
 const maxLength = 17;
@@ -12,7 +13,7 @@ let result;
 function calculator(btn) {
     switch (btn.type) {
         case 'number':
-            if (input.length >= maxLength) {
+            if (getDigitCount(input) >= maxLength) {
                 return;
             }
             // if the input is 0, get rid of that 0
@@ -26,7 +27,7 @@ function calculator(btn) {
             updateDisplay(formatOutput(input, operators));
             break;
         case 'operator':
-            if (input.length >= maxLength) {
+            if (getDigitCount(input) >= maxLength) {
                 return;
             }
             else if ([...operators, '.'].includes(input[input.length-1])) {
@@ -40,7 +41,7 @@ function calculator(btn) {
             updateDisplay(formatOutput(input, operators));
             break;
         case 'decimal':
-            if (input.length >= maxLength) {
+            if (getDigitCount(input) >= maxLength) {
                 return;
             }
             else if (!input.length)  {
@@ -80,8 +81,6 @@ function calculator(btn) {
                 input = [];
                 input.push(result);
                 updateDisplay(formatResult(result, maxLength));
-                console.log(input);
-                console.log(result)
             }
     }
 }

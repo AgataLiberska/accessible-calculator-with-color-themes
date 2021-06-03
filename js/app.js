@@ -15,9 +15,7 @@ const closeNUX = document.getElementById('close-nux-btn');
 let mouseDown = false;
 
 const showInstructions = () => {
-    if (mouseDown) {
-        e.target.blur();
-    } else {
+    if (!mouseDown) {
         firstGridBtn.removeEventListener('focus', showInstructions);
         NUX.classList.remove('hidden');
         NUX.focus();
